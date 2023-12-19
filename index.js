@@ -25,8 +25,6 @@ async function infoGenerate() {
     let conexao = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_TDnfVQ48tTvK68YmYvwnWKmqFdfSE&ipAddress=${ip.value}&domain=${ip.value}`)
     let conexaoConvertida = await conexao.json();
 
-    console.log(conexaoConvertida);
-
     address.innerText = `${conexaoConvertida.ip}`
     localize.innerText = `${conexaoConvertida.location.city}, ${conexaoConvertida.location.region}`
     timezone.innerText = `UTC${conexaoConvertida.location.timezone}`
